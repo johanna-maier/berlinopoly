@@ -1,0 +1,4 @@
+- sort highscores according to highest balance
+- maybe show most important status inside board
+- allow for more players to play
+- add streets for full board
