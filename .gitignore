@@ -1,0 +1,5 @@
+myflaskapp/__pycache__
+app/pkg/__pycache__
+
+myflaskapp/test.db
+virtualenv
