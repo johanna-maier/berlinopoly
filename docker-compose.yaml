@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:13
+    container_name: berlinopoly_db
+    environment:
+      - POSTGRES_USER=monopoly_user
+      - POSTGRES_PASSWORD=monopoly_pass
+      - POSTGRES_DB=berlinopoly_db
+    ports:
+      - "8080:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - berlinopoly_network
+
+  # Optional: You can also add a pgAdmin container to manage the database
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    ports:
+      - "5050:80"
+    networks:
+      - berlinopoly_network
+
+networks:
+  berlinopoly_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local
