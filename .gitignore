@@ -3,3 +3,8 @@ myflaskapp/test.db
 venv/
 **/env.py
 **/.env
+venv/
+__pycache__/
+myflaskapp/test.db
+myflaskapp/env.py
+myflaskapp/.env
